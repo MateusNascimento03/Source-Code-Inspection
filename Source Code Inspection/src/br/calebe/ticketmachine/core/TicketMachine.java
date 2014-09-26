@@ -32,20 +32,28 @@ public class TicketMachine {
         this.saldo += quantia;
     }
 
+    
+    
     public int getSaldo() {
         return saldo;
     }
-
-    public Iterator<Integer> getTroco() {
-        return null;
+    
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
     }
 
-    public String imprimir() throws SaldoInsuficienteException {
+
+    //public Iterator<Integer> getTroco() {
+      //  return null;
+    //}
+
+    
+    public String imprimirBilhete() throws SaldoInsuficienteException {
         if (saldo < valor) {
             throw new SaldoInsuficienteException();
         }
         String result = "*****************\n";
-        result += "*** R$ " + saldo + ",00 ****\n";
+        result += "*** R$ " + valor + ",00 ****\n";
         result += "*****************\n";
         return result;
     }
